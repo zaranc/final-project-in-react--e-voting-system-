@@ -12,16 +12,6 @@ const Login = () => {
     // State to manage loading status
     const [loading, setLoading] = useState(false);
 
-    // Redux dispatch
-    //   let dispatch = useDispatch();
-
-    //   // Fetch vote data from server
-    //   useEffect(() => {
-    //     dispatch(fetchData({ dataType: "vote", endpoint: vote_get_req }));
-    //   }, []);
-
-    //   // Select vote data from Redux store
-    //   let voteData = useSelector((state) => state.admin.vote);
 
     // Function to handle form submission
     let handleSubmit = async () => {
@@ -81,95 +71,6 @@ const Login = () => {
 
             }
         }
-        //       if (!voteData.find((val) => val.user?.cardNo === data.cardNo)) {
-        //         // Set login info to localStorage
-        //         localStorage.setItem("role", "user");
-        //         localStorage.setItem("userData", JSON.stringify(res.data.data));
-
-        //         // Show success alert on successful login
-        //         const Toast = Swal.mixin({
-        //           toast: true,
-        //           position: "top",
-        //           showConfirmButton: false,
-        //           timer: 1000,
-        //           didOpen: (toast) => {
-        //             toast.onmouseenter = Swal.stopTimer;
-        //             toast.onmouseleave = Swal.resumeTimer;
-        //           },
-        //         });
-        //         Toast.fire({
-        //           icon: "success",
-        //           title: "Login Successfully",
-        //         });
-
-        //         // Redirect to home page after 600 milliseconds
-        //         setTimeout(() => {
-        //           window.location.href = "/home";
-        //         }, 600);
-
-        //         // Clear input fields after successful login
-        //         name.current.value = "";
-        //         password.current.value = "";
-        //       } else {
-        //         // Show error alert if user has already voted
-        //         setLoading(false); // Reset loading state
-        //         const Toast = Swal.mixin({
-        //           toast: true,
-        //           position: "top",
-        //           showConfirmButton: false,
-        //           timer: 1000,
-        //           didOpen: (toast) => {
-        //             toast.onmouseenter = Swal.stopTimer;
-        //             toast.onmouseleave = Swal.resumeTimer;
-        //           },
-        //         });
-        //         Toast.fire({
-        //           icon: "error",
-        //           title: "You have already voted",
-        //         });
-        //         name.current.value = "";
-        //         password.current.value = "";
-        //       }
-        //     } else {
-        //       // Show error alert if login fails
-        //       setLoading(false); // Reset loading state
-        //       const Toast = Swal.mixin({
-        //         toast: true,
-        //         position: "top",
-        //         showConfirmButton: false,
-        //         timer: 1000,
-        //         didOpen: (toast) => {
-        //           toast.onmouseenter = Swal.stopTimer;
-        //           toast.onmouseleave = Swal.resumeTimer;
-        //         },
-        //       });
-        //       Toast.fire({
-        //         icon: "error",
-        //         title: "Please check VoterID and password",
-        //       });
-        //       name.current.value = "";
-        //       password.current.value = "";
-        //     }
-        //   } catch (error) {
-        //     // Show error alert if request fails
-        //     setLoading(false); // Reset loading state
-        //     const Toast = Swal.mixin({
-        //       toast: true,
-        //       position: "top",
-        //       showConfirmButton: false,
-        //       timer: 1000,
-        //       didOpen: (toast) => {
-        //         toast.onmouseenter = Swal.stopTimer;
-        //         toast.onmouseleave = Swal.resumeTimer;
-        //       },
-        //     });
-        //     Toast.fire({
-        //       icon: "error",
-        //       title: "Please check VoterID and password",
-        //     });
-        //     console.error(error);
-        //   }
-        // }
     };
 
 

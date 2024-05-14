@@ -42,7 +42,7 @@ const Sidebar = () => {
           <Link to="/user" className="text-white">User</Link>
         </li>
       </ul>
-      <div className="logout text-center mt-3"> {/* Logout button */}
+      <div className="logout text-center mt-3"> 
         <button className="btn btn-danger" onClick={handleLogout}>
           Logout
         </button>

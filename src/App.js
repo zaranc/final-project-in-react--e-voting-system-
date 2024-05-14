@@ -16,9 +16,10 @@ import {
   GET_ALL_ELECTION_PENDING,
   GET_ALL_PARTY_PENDING,
   GET_ALL_USER_PENDING,
+  GET_ALL_VOTE_PENDING,
 } from "./redux-saga/admin/action/Action";
 import { useEffect } from "react";
-import { election_get_req, party_get_req, partylist_get_req, user_get_req } from "./redux-saga/Constant";
+import { election_get_req, party_get_req, partylist_get_req, user_get_req, vote_get_req } from "./redux-saga/Constant";
 import Sidebar from "./Admin/Header/Sidebar";
 
 const getRole = () => {
@@ -33,6 +34,7 @@ const App = () => {
     dispatch({ type: GET_ALL_PARTY_PENDING, endpoint: party_get_req });
     dispatch({ type: GET_ALL_CONNECTION_PENDING, endpoint: partylist_get_req });
     dispatch({ type: GET_ALL_USER_PENDING, endpoint: user_get_req });
+    dispatch({ type: GET_ALL_VOTE_PENDING, endpoint: vote_get_req });
   }, []);
 
   const role = getRole();

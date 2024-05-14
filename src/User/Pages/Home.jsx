@@ -1,4 +1,3 @@
-
 import React from 'react'
 import TablewithRadio from '../../Atoms/TablewithRadio'
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,6 +19,7 @@ const Home = () => {
 
     let data = connectionData?.map((connection) => ({
         id: connection?._id,
+        party_id:connection?.party?._id,
         election_name: connection?.election?.election_name,
         election: connection?.election?._id,
         party: connection?.party?.party_name,
@@ -27,9 +27,10 @@ const Home = () => {
     }));
 
     let finalData = (rowData) => {
+        console.log(rowData);
         let data = {
             user: user?._id,
-            party: rowData?.id,
+            party: rowData?.party_id,
             election: rowData?.election,
         };
         dispatch({ type: ADD_VOTE_PENDING, endpoint: vote_post_req, payload: data })
