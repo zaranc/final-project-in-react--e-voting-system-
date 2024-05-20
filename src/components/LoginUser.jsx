@@ -79,7 +79,8 @@ const LoginUser = () => {
             <div className="container">
                 <div className="row">
                     <div className="left-side col-6 d-flex justify-content-center align-items-center ">
-                        <h1>E-VOTING</h1>
+                        <img src='https://media.licdn.com/dms/image/D4D03AQFfruXrqZjqDg/profile-displayphoto-shrink_400_400/0/1714999731614?e=1721865600&v=beta&t=Ww4CI9NEfDtpTQ6lyA0QIBM7rOOqUS7JBxNRtO9op_M'/>
+                        <h1></h1>
                     </div>
                     <div className="right-side col-6 d-flex justify-content-center align-items-center" >
 

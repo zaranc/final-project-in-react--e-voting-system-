@@ -18,9 +18,9 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar bg-dark text-white p-3">
-      <div className="logo text-center mb-3 w-50">
+      <div className="logo text-center mb-3 w-75">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRADpfeWoT-oOJ5Ip2X5JugYmj06CO0H5Rt0gtygESLzN3qCEez2Rb0zSGWNyI920QrTfY&usqp=CAU"
+          src="https://media.licdn.com/dms/image/D4D03AQFfruXrqZjqDg/profile-displayphoto-shrink_400_400/0/1714999731614?e=1721865600&v=beta&t=Ww4CI9NEfDtpTQ6lyA0QIBM7rOOqUS7JBxNRtO9op_M"
           alt="E-Voting System Logo"
           className="img-fluid m-4"
         />
