@@ -23,10 +23,13 @@ export let election_delete_req = "election/delete/";
 export let partylist_post_req = "partylist/create";
 export let partylist_get_req = "partylist/list";
 export let partylist_get_req_id = "partylist/findId/";
-export let partylist_delete_req = "partylist/delete/";
+// export let partylist_delete_req = "partylist/delete/";
 
 // Vote
 export let vote_post_req = "vote/create";
 export let vote_get_req = "vote/list";
 export let vote_get_req_id = "vote/findId/";
 export let vote_delete_req = "vote/delete/";
+
+
+export let DELETE_USER = "partlist/delete/";

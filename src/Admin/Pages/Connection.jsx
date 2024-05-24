@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import DataTable from '../../Atoms/DataTable';
-import {
-  Box,
-  Button,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-  FormControl,
-} from '@mui/material';
+import {Button,Grid,FormControl,} from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADD_CONNECTION_PENDING, GET_ALL_CONNECTION_PENDING, GET_ALL_ELECTION_PENDING, GET_ALL_PARTY_PENDING } from '../../redux-saga/admin/action/Action';
-import { election_get_req, party_get_req, partylist_get_req, partylist_post_req } from '../../redux-saga/Constant';
+import { ADD_CONNECTION_PENDING, DELETE_USER_PENDING } from '../../redux-saga/admin/action/Action';
+import { partylist_post_req } from '../../redux-saga/Constant';
 
 const Connection = () => {
   const [selectedElection, setSelectedElection] = useState('');
@@ -58,6 +50,8 @@ const Connection = () => {
   // Function to handle deletion of election
   const handleDelete = (id) => {
     console.log(id);
+    
+    dispatch({ type: DELETE_USER_PENDING, payload:id })
   };
 
   // Function to handle update of election
@@ -88,7 +82,7 @@ const Connection = () => {
           />
         </Grid>
         <Grid item xs={12} sm={4}>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
+          <FormControl fullWidth sx={{ marginBottom: 5, border: "3px solid" }}>
             <select value={selectedElection} onChange={(e) => setSelectedElection(e.target.value)}>
               <option value="">Select Election</option>
               {electionData?.map((val) => (
@@ -96,7 +90,7 @@ const Connection = () => {
               ))}
             </select>
           </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
+          <FormControl fullWidth sx={{ marginBottom: 5,  border: "3px solid"}}>
             <select value={selectedParty} onChange={(e) => setSelectedParty(e.target.value)}>
               <option value="">Select Party</option>
               {partyData?.map((val) => (

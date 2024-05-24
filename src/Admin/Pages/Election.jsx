@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { } from "react";
 import DataTable from "../../Atoms/DataTable";
 import AddButton from "../../Atoms/Button";
 import { Box, Grid, IconButton, TextField } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_ELECTION_PENDING, GET_ALL_ELECTION_PENDING } from "../../redux-saga/admin/action/Action";
-import { election_get_req, election_post_req } from "../../redux-saga/Constant";
+import { election_post_req } from "../../redux-saga/Constant";
 
 const Election = () => {
   const inputTitles = ["election_name", "date"];

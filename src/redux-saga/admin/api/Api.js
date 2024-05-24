@@ -23,5 +23,18 @@ let postData = (action) => {
     })
 }
 
+let delete_user = (action) => {
 
-export { getData, postData } 
+    let { endpoint } = action;
+    
+    return axios.delete(Base_url + endpoint + action.payload).then((res) => {
+        
+        let data = res.data;
+        let status = res.status
+
+        return {data, status}
+    })
+}
+
+
+export { getData, postData , delete_user} 

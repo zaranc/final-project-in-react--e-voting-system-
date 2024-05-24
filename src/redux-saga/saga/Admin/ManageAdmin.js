@@ -1,6 +1,6 @@
 import { put, call } from "redux-saga/effects"
-import { getData, postData } from "../../admin/api/Api"
-import { ADD_CONNECTION_FAILED, ADD_CONNECTION_SUCCESS, ADD_ELECTION_FAILED, ADD_ELECTION_SUCCESS, ADD_PARTY_FAILED, ADD_PARTY_SUCCESS, ADD_USER_FAILED, ADD_USER_SUCCESS, ADD_VOTE_FAILED, ADD_VOTE_SUCCESS, GET_ALL_CONNECTION_FAILED, GET_ALL_CONNECTION_PENDING, GET_ALL_CONNECTION_SUCCESS, GET_ALL_ELECTION_FAILED, GET_ALL_ELECTION_SUCCESS, GET_ALL_PARTY_FAILED, GET_ALL_PARTY_PENDING, GET_ALL_PARTY_SUCCESS, GET_ALL_USER_FAILED, GET_ALL_USER_PENDING, GET_ALL_USER_SUCCESS, GET_ALL_VOTE_FAILED, GET_ALL_VOTE_SUCCESS } from "../../admin/action/Action"
+import { delete_user, getData, postData } from "../../admin/api/Api"
+import { ADD_CONNECTION_FAILED, ADD_CONNECTION_SUCCESS, ADD_ELECTION_FAILED, ADD_ELECTION_SUCCESS, ADD_PARTY_FAILED, ADD_PARTY_SUCCESS, ADD_USER_FAILED, ADD_USER_SUCCESS, ADD_VOTE_FAILED, ADD_VOTE_SUCCESS, DELETE_USER_ERROR, DELETE_USER_SUCCESS, GET_ALL_CONNECTION_FAILED, GET_ALL_CONNECTION_PENDING, GET_ALL_CONNECTION_SUCCESS, GET_ALL_ELECTION_FAILED, GET_ALL_ELECTION_SUCCESS, GET_ALL_PARTY_FAILED, GET_ALL_PARTY_SUCCESS, GET_ALL_USER_FAILED, GET_ALL_USER_SUCCESS, GET_ALL_VOTE_FAILED, GET_ALL_VOTE_SUCCESS } from "../../admin/action/Action"
 
 function* handle_get_party_data(action) {
     // console.log(action, "manage");
@@ -196,5 +196,25 @@ function* handle_add_vote_data(action) {
 
 }
 
+function* handle_DELETE_USER(action) {
+    
+    try {
+        
+        let { data, status } = yield call(delete_user, action);
+        console.log(status);
 
-export { handle_get_party_data, handle_add_vote_data, handle_get_vote_data, handle_get_election_data, handle_get_user_data, handle_add_election_data, handle_add_party_data, handle_get_connection_data, handle_add_connection_data, handle_add_user_data }
+        if (status == 201 || status == 200) {
+            yield put({ type: DELETE_USER_SUCCESS, data });
+        }
+        else {
+            yield put({ type: DELETE_USER_ERROR, data });
+        }
+    }
+    catch(err) {
+        yield put({ type: DELETE_USER_ERROR, err});
+    }
+
+}
+
+
+export { handle_get_party_data, handle_add_vote_data, handle_get_vote_data, handle_get_election_data, handle_get_user_data, handle_add_election_data, handle_add_party_data, handle_get_connection_data, handle_add_connection_data, handle_add_user_data, handle_DELETE_USER }
