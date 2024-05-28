@@ -73,7 +73,6 @@ export default function Party() {
   // Function to handle deletion of election
   const handleDelete = (id) => {
     console.log(id);
-    dispatch({type:DELETE_PARTY_PENDING , payload : id ,endpoint : party_delete_req} );
   };
 
   // Dummy function for handling update (not implemented)

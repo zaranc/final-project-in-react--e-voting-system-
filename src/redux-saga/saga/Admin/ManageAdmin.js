@@ -196,39 +196,8 @@ function* handle_add_vote_data(action) {
 
 }
 
-function* handle_DELETE_USER(action) {
-    
-    try {
-        
-        let { data, status } = yield call(delete_user, action);
-        console.log(status);
-
-        if (status == 201 || status == 200) {
-            yield put({ type: DELETE_PARTY_SUCCESS, data });
-        }
-        else {
-            yield put({ type: DELETE_PARTY_FAILED, data });
-        }
-    }
-    catch(err) {
-        yield put({ type: DELETE_PARTY_FAILED, err});
-    }
-
-}
-
-function* handle_delete_election_data(action) {
-    console.log(action, "action from delete election ");
-    try {
-        let { status, data } = yield call(delete_user, action)
-        if (status == 201 || status == 200) {
-            yield put({ type: DELETE_ELECTION_SUCCESS, data })
-        } else {
-            yield put({ type: DELETE_ELECTION_FAILED, data })
-        }
-    } catch (error) {
-        yield put({ type: DELETE_ELECTION_FAILED, error })
-    }
-}
 
 
-export { handle_get_party_data, handle_add_vote_data, handle_get_vote_data, handle_get_election_data, handle_get_user_data, handle_add_election_data, handle_add_party_data, handle_get_connection_data, handle_add_connection_data, handle_add_user_data, handle_DELETE_USER ,handle_delete_election_data}
+
+
+export { handle_get_party_data, handle_add_vote_data, handle_get_vote_data, handle_get_election_data, handle_get_user_data, handle_add_election_data, handle_add_party_data, handle_get_connection_data, handle_add_connection_data, handle_add_user_data }

@@ -3,8 +3,8 @@ import DataTable from "../../Atoms/DataTable";
 import AddButton from "../../Atoms/Button";
 import { Box, Grid, IconButton, TextField } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { ADD_ELECTION_PENDING, DELETE_ELECTION_PENDING, GET_ALL_ELECTION_PENDING } from "../../redux-saga/admin/action/Action";
-import { election_delete_req, election_post_req } from "../../redux-saga/Constant";
+import { ADD_ELECTION_PENDING } from "../../redux-saga/admin/action/Action";
+import { election_post_req } from "../../redux-saga/Constant";
 
 const Election = () => {
   const inputTitles = ["election_name", "date"];
@@ -37,7 +37,6 @@ console.log(data,"Sdsa");
   // Function to handle deletion of election
   const handleDelete = (id) => {
     console.log(id);
-    dispatch({ type: DELETE_ELECTION_PENDING, payload: id , endpoint : election_delete_req})
   };
 
   // Dummy function for handling update (not implemented)
