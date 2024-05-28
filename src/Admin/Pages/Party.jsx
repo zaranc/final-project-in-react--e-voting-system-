@@ -8,8 +8,8 @@ import { Grid, TextField } from '@mui/material';
 import { Box, ListItem, ModalClose, Sheet, Typography } from '@mui/joy';
 import DataTable from '../../Atoms/DataTable';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADD_PARTY_PENDING, } from '../../redux-saga/admin/action/Action';
-import { party_post_req } from '../../redux-saga/Constant';
+import { ADD_PARTY_PENDING, DELETE_PARTY_PENDING, } from '../../redux-saga/admin/action/Action';
+import { party_delete_req, party_post_req } from '../../redux-saga/Constant';
 
 export default function Party() {
 
@@ -73,6 +73,7 @@ export default function Party() {
   // Function to handle deletion of election
   const handleDelete = (id) => {
     console.log(id);
+    dispatch({type:DELETE_PARTY_PENDING , payload : id ,endpoint : party_delete_req} );
   };
 
   // Dummy function for handling update (not implemented)

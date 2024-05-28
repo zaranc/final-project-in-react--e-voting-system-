@@ -50,8 +50,6 @@ const Connection = () => {
   // Function to handle deletion of election
   const handleDelete = (id) => {
     console.log(id);
-    
-    dispatch({ type: DELETE_USER_PENDING, payload:id })
   };
 
   // Function to handle update of election
